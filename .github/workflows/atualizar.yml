@@ -5,7 +5,7 @@ name: Atualizar dados
 # Continua a poder ser corrido à mão no botão "Run workflow".
 on:
   schedule:
-    - cron: "0,30 12-22 * * 1-5"
+    - cron: "7,37 12-22 * * 1-5"
   workflow_dispatch:
 
 permissions:

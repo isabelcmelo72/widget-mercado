@@ -1,8 +1,11 @@
 name: Atualizar dados
 
-# Por agora só corre quando carregas no botão (teste).
-# Depois de confirmarmos que funciona, acrescentamos a execução automática.
+# Corre de 30 em 30 minutos, de segunda a sexta, entre as 12h e as 22h30 UTC
+# (13h a 22h30 em Lisboa no inverno; 13h a 23h30 no verão, com folga).
+# Continua a poder ser corrido à mão no botão "Run workflow".
 on:
+  schedule:
+    - cron: "0,30 12-22 * * 1-5"
   workflow_dispatch:
 
 permissions:

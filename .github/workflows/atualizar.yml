@@ -1,0 +1,31 @@
+name: Atualizar dados
+
+# Por agora só corre quando carregas no botão (teste).
+# Depois de confirmarmos que funciona, acrescentamos a execução automática.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Ir buscar os valores
+        run: python fetch_data.py
+
+      - name: Guardar data.json no repositório
+        if: success()
+        run: |
+          git config user.name "atualizador"
+          git config user.email "atualizador@users.noreply.github.com"
+          git add data.json
+          git diff --cached --quiet || git commit -m "Atualizar dados"
+          git push

@@ -1,11 +1,11 @@
 {
   "fear_greed": {
-    "valor": 21,
-    "classificacao": "Medo Extremo"
+    "valor": 27,
+    "classificacao": "Medo"
   },
   "vix": {
-    "valor": 19.45
+    "valor": 18.33
   },
   "cor": "neutro",
-  "atualizado_utc": "2026-10-23T23:23:58Z"
+  "atualizado_utc": "2026-10-26T18:37:26Z"
 }
